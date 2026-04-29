@@ -69,6 +69,10 @@ group "make defconfig"
 make defconfig
 endgroup
 
+group "golang 1.26.x"
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+
 if [ -z "$PACKAGES" ]; then
 	# compile all packages in feed
 	for FEED in $ALL_CUSTOM_FEEDS; do
